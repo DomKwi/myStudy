@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     let eggTime = ["Soft": 300, "Medium": 420, "Hard": 700]
     var timer = Timer()
     var totalTime = 0
     var secondsPassed = 0
+    var player: AVAudioPlayer!
     
     @IBOutlet weak var TitleLabel: UILabel!
-    
     @IBOutlet weak var eggCookingProgressBar: UIProgressView!
     @IBAction func hardnessSelected(_ sender: UIButton) {
         //print(sender.currentTitle!)
@@ -37,8 +38,14 @@ class ViewController: UIViewController {
             if(self.secondsPassed > self.totalTime){
                 timer.invalidate()
                 self.TitleLabel.text = "Your eggs are done !!!"
-                
+                self.playAlarmSound()
             }
         }
+    }
+    
+    func playAlarmSound() {
+        let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
 }

@@ -23,18 +23,18 @@ class ViewController: UIViewController {
         let hardness = sender.currentTitle!
         totalTime = eggTime[hardness]!
         
-        //self.eggCookingProgressBar.progress = 1
+        eggCookingProgressBar.progress = 0
+        secondsPassed = 0 
         
         print("time start is \(totalTime)")
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             
-            let procentageProgress = self.secondsPassed / self.totalTime 
-            self.eggCookingProgressBar.progress = Float(procentageProgress)
-            
             self.TitleLabel.text = "Your egg will be ready in \(self.totalTime) seconds!"
-            self.secondsPassed += 1
             
-            if(self.secondsPassed < self.totalTime){
+            self.secondsPassed += 1
+            self.eggCookingProgressBar.progress = Float(self.secondsPassed) / Float(self.totalTime)
+            
+            if(self.secondsPassed > self.totalTime){
                 timer.invalidate()
                 self.TitleLabel.text = "Your eggs are done !!!"
                 

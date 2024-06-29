@@ -13,11 +13,13 @@ class ViewController: UIViewController {
     var timer = Timer()
     @IBOutlet weak var TitleLabel: UILabel!
     
+    @IBOutlet weak var eggCookingProgressBar: UIProgressView!
     @IBAction func hardnessSelected(_ sender: UIButton) {
         //print(sender.currentTitle!)
         timer.invalidate()
         let hardness = sender.currentTitle!
         var timeLeft = eggTime[hardness]!
+        self.eggCookingProgressBar.progress = 1
         
         print("time start is \(timeLeft)")
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
             if(timeLeft==0){
                 timer.invalidate()
                 self.TitleLabel.text = "Your eggs are done !!!"
+                
             }
         }
     }

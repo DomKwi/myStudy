@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         let hardness = sender.currentTitle!
         var timeLeft = eggTime[hardness]!
         
-    
         print("time start is \(timeLeft)")
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             self.TitleLabel.text = "Your egg will be ready in \(timeLeft) seconds!"
@@ -32,8 +31,5 @@ class ViewController: UIViewController {
                 self.TitleLabel.text = "Your eggs are done !!!"
             }
         }
-        
-        
     }
-    
 }

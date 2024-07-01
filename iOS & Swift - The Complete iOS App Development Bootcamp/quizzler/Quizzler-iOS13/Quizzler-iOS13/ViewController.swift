@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        questionLabel.text = "Four + Two is equal to Six"
     }
     @IBAction func answerButtonPressed(_ sender: UIButton) {
     }

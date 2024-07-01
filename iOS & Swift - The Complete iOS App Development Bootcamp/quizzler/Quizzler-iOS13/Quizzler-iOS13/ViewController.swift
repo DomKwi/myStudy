@@ -14,15 +14,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var trueButton: UIButton!
     
+    let quiz = [
+        "Four + Two is equal to Six.",
+        "Five - Three is greater than One",
+        "Three + Eight is less then Ten"
+    ]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        questionLabel.text = "Four + Two is equal to Six"
-    }
-    @IBAction func answerButtonPressed(_ sender: UIButton) {
+        questionLabel.text = quiz[0]
+        
     }
     
-
+    @IBAction func answerButtonPressed(_ sender: UIButton) {
+        
+    }
 }
 

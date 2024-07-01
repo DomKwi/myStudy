@@ -35,6 +35,10 @@ class ViewController: UIViewController {
         if questionNumber == 3 {
             questionNumber = 0
         }
+        updateUI()
+    }
+    
+    func updateUI() {
         questionLabel.text = quiz[questionNumber]
     }
 }

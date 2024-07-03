@@ -34,6 +34,12 @@ class ViewController: UIViewController {
         let userAnswer = sender.currentTitle //True, False
         let actualAnswer = quiz[questionNumber][1]
         
+        if userAnswer == actualAnswer {
+            print("Right!")
+        } else {
+            print("Wrong!")
+        }
+        
         questionNumber += 1
         
         if questionNumber == 3 {

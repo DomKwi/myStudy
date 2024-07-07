@@ -65,12 +65,10 @@ class ViewController: UIViewController {
     
     func updateUI() {
         
-        
-        
-        
         questionLabel.text = quiz[questionNumber].text
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
+        
     }
 }
 

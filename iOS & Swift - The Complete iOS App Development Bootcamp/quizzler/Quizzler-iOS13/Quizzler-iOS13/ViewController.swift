@@ -51,13 +51,13 @@ class ViewController: UIViewController {
             sender.backgroundColor = UIColor.red
         }
         
-        if questionNumber < quiz.count - 1 {
+        if questionNumber + 1 < quiz.count {
             questionNumber += 1
         } else {
             questionNumber = 0
         }
         
-        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) {
+            timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) {
             timer in
             self.updateUI()
         }
@@ -69,6 +69,10 @@ class ViewController: UIViewController {
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
         
+        progressBar.progress = Float(questionNumber) / Float(quiz.count)
+        print(progressBar.progress)
     }
+
 }
+
 

@@ -41,6 +41,7 @@ class ViewController: UIViewController {
         
         let userAnswer = sender.currentTitle //True, False
         let actualAnswer = quiz[questionNumber].answer
+        timer.invalidate()
         
         if userAnswer == actualAnswer {
             print("Right!")
@@ -56,19 +57,20 @@ class ViewController: UIViewController {
             questionNumber = 0
         }
         
-        updateUI()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) {
+            timer in
+            self.updateUI()
+        }
     }
     
     func updateUI() {
-        timer.invalidate()
         
-        timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) {
-            timer in
-            
-            self.questionLabel.text = self.quiz[self.questionNumber].text
-            self.trueButton.backgroundColor = UIColor.clear
-            self.falseButton.backgroundColor = UIColor.clear
-        }
+        
+        
+        
+        questionLabel.text = quiz[questionNumber].text
+        trueButton.backgroundColor = UIColor.clear
+        falseButton.backgroundColor = UIColor.clear
     }
 }
 

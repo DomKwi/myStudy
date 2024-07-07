@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var trueButton: UIButton!
     
+    var timer = Timer()
+    var questionNumber = 0
+    
     let quiz = [
         Question(q: "A slug's blood is green.", a: "True"),
         Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
@@ -30,8 +33,6 @@ class ViewController: UIViewController {
         
     ]
     
-    var questionNumber = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -40,11 +41,14 @@ class ViewController: UIViewController {
         
         let userAnswer = sender.currentTitle //True, False
         let actualAnswer = quiz[questionNumber].answer
+        timer.invalidate()
         
         if userAnswer == actualAnswer {
             print("Right!")
+            sender.backgroundColor = UIColor.green
         } else {
             print("Wrong!")
+            sender.backgroundColor = UIColor.red
         }
         
         if questionNumber < quiz.count - 1 {
@@ -53,11 +57,18 @@ class ViewController: UIViewController {
             questionNumber = 0
         }
         
-        updateUI()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) {
+            timer in
+            self.updateUI()
+        }
     }
     
     func updateUI() {
-        questionLabel.text = quiz[questionNumber].answer
+        
+        questionLabel.text = quiz[questionNumber].text
+        trueButton.backgroundColor = UIColor.clear
+        falseButton.backgroundColor = UIColor.clear
+        
     }
 }
 

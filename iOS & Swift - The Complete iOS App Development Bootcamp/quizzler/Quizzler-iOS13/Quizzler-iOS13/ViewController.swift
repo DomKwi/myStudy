@@ -57,7 +57,7 @@ class ViewController: UIViewController {
             questionNumber = 0
         }
         
-            timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) {
+            timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) {
             timer in
             self.updateUI()
         }

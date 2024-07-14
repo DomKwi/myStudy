@@ -22,3 +22,14 @@ func greeting3(name: String) -> Bool {
 }
 
 greeting3(name: "Angela")
+
+func isOdd(n: Int) -> Bool {
+    
+    if n % 2 == 0 {
+        return false
+    } else {
+        return true
+    }
+}
+
+isOdd(n: 3)

@@ -26,8 +26,30 @@ struct QuizBrain {
     ]
     
     var questionNumber = 0
+    //checking the question number and seeing if the answer is correct
+    func checkAnswer(_ userAnswer: String) -> Bool {
+        
+        if userAnswer == quiz[questionNumber].answer {
+            return true
+        } else {
+            return false
+        }
+    }
+    //returning the question text that corresponds to a given question number 
+    func getQuestionText() -> String {
+        return quiz[questionNumber].text
+    }
+    //Recalculating Progress bar by dividing the question number by the number of questions
+    func getProgress() -> Float {
+        let progress = Float(questionNumber) / Float(quiz.count)
+        return progress
+    }
     
-    func checkAnswer(_ userAnswer: String) {
-        <#function body#>
+    func nextQuestion() {
+        if questionNumber + 1 < quiz.count {
+            questionNumber += 1
+        } else {
+            questionNumber = 0
+        }
     }
 }

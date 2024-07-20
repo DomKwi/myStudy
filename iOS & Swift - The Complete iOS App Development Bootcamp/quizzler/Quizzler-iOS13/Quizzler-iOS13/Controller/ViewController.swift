@@ -12,10 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var falseButton: UIButton!
-    @IBOutlet weak var falseButton1: UIButton!
-    @IBOutlet weak var falseButton2: UIButton!
-    @IBOutlet weak var correctAnswerButton: UIButton!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
     
     var timer = Timer()
     var quizBrain = QuizBrain()
@@ -26,7 +25,7 @@ class ViewController: UIViewController {
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
-        let userAnswer = sender.currentTitle! //True, False
+        let userAnswer = sender.currentTitle! //correct, not correct
         let userGotItRight = quizBrain.checkAnswer(userAnswer)
         timer.invalidate()
         
@@ -48,11 +47,14 @@ class ViewController: UIViewController {
         
         questionLabel.text = quizBrain.getQuestionText()
         
-        correctAnswerButton.backgroundColor = UIColor.clear
-        falseButton.backgroundColor = UIColor.clear
-        falseButton1.backgroundColor = UIColor.clear
-        falseButton2.backgroundColor = UIColor.clear
+        button3.backgroundColor = UIColor.clear
+        button1.backgroundColor = UIColor.clear
+        button2.backgroundColor = UIColor.clear
         
+        button1.setTitle("\(quizBrain.getAnswerOptions()[0])", for: .normal)
+        button2.setTitle("\(quizBrain.getAnswerOptions()[1])", for: .normal)
+        button3.setTitle("\(quizBrain.getAnswerOptions()[2])", for: .normal)
+       
         scoreLabel.text = "Score:\(quizBrain.getScore())"
         
         progressBar.progress = quizBrain.getProgress()

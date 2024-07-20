@@ -38,6 +38,10 @@ struct QuizBrain {
     func getScore() -> Int {
         return score
     }
+    //pulling questions into text form
+    func getAnswerOptions() -> [String] {
+        return quiz[questionNumber].answer
+    }
     
     //returning the question text that corresponds to a given question number
     func getQuestionText() -> String {

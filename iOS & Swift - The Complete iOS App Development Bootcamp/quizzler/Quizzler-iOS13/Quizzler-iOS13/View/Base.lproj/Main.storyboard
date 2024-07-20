@@ -62,7 +62,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7iC-UF-lNy"/>
+                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0qS-lO-5rS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zM-8g-cVh">
@@ -76,7 +76,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6IN-Wr-saE"/>
+                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vpE-hO-Gdm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-Hl-IRe">
@@ -119,11 +119,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="correctAnswerButton" destination="oVw-Hl-IRe" id="JLs-jB-wSN"/>
                         <outlet property="falseButton" destination="tbn-vQ-GyC" id="4uy-0I-T3X"/>
+                        <outlet property="falseButton1" destination="9L8-Vk-Or3" id="2Vw-Za-8Yt"/>
+                        <outlet property="falseButton2" destination="1zM-8g-cVh" id="K94-p8-29o"/>
                         <outlet property="progressBar" destination="TXm-qh-7Xg" id="bZc-Jv-yox"/>
                         <outlet property="questionLabel" destination="rSI-li-mhO" id="lda-Th-KUd"/>
                         <outlet property="scoreLabel" destination="clv-KE-PuE" id="oWi-Ix-n2n"/>
-                        <outlet property="trueButton" destination="oVw-Hl-IRe" id="JLs-jB-wSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

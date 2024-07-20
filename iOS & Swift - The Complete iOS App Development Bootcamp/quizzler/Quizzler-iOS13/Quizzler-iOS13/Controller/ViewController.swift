@@ -35,7 +35,7 @@ class ViewController: UIViewController {
             print("Wrong!")
             sender.backgroundColor = UIColor.red
         }
-        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) {
+        timer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) {
             timer in
             self.quizBrain.nextQuestion()
             self.updateUI()

@@ -16,17 +16,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        storyLabel.text = story0
-        choice1Button.setTitle(choice1, for: .normal)
-        choice2Button.setTitle(choice2, for: .normal)
+        storyLabel.text = example.title
+        choice1Button.setTitle(example.choice1, for: .normal)
+        choice2Button.setTitle(example.choice2, for: .normal)
     }
     
     @IBAction func choiceMade(_ sender: UIButton) {
         
     }
     
-    let story0 = "You see a fork in the road."
-    let choice1 = "Take a left."
-    let choice2 = "Take a right."
+    let example = Story(title: "Example Story",
+                        choice1: "Choice 1",
+                        choice2: "Choice 2")
 }
 

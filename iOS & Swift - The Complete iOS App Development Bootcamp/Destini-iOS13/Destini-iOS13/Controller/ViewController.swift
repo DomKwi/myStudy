@@ -25,8 +25,14 @@ class ViewController: UIViewController {
         
     }
     
-    let example = Story(title: "Example Story",
-                        choice1: "Choice 1",
-                        choice2: "Choice 2")
+    let example = [
+        Story(title: "Example Story",
+              choice1: "Take a left",
+              choice2: "Take a right"),
+        Story(title: "You see a tiger",
+              choice1: "shout for help",
+              choice2: "play dead"),
+        Story(title: "You find a treasure chest", choice1: "Open it.", choice2: "check for traps")
+    ]
 }
 

@@ -22,17 +22,32 @@ class ViewController: UIViewController {
     }
     
     @IBAction func choiceMade(_ sender: UIButton) {
+        let userChoice = sender.currentTitle!
+        var nextStory = example[0]
         
+        if userChoice == choice1Button.currentTitle! {
+            nextStory = example[1]
+            storyLabel.text = nextStory.title
+            choice1Button.setTitle(nextStory.choice1, for: .normal)
+            choice2Button.setTitle(nextStory.choice2, for: .normal)
+        } else {
+            nextStory = example[2]
+            storyLabel.text = nextStory.title
+            choice1Button.setTitle(nextStory.choice1, for: .normal)
+            choice2Button.setTitle(nextStory.choice2, for: .normal)
+        }
     }
     
     let example = [
-        Story(title: "Example Story",
+        Story(title: "You see a fork in the road.",
               choice1: "Take a left",
               choice2: "Take a right"),
         Story(title: "You see a tiger",
               choice1: "shout for help",
               choice2: "play dead"),
-        Story(title: "You find a treasure chest", choice1: "Open it.", choice2: "check for traps")
+        Story(title: "You find a treasure chest",
+              choice1: "Open it.",
+              choice2: "check for traps")
     ]
 }
 

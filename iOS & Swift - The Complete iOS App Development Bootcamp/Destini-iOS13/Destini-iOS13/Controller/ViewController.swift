@@ -25,16 +25,20 @@ class ViewController: UIViewController {
         let userChoice = sender.currentTitle!
         var nextStory = example[0]
         
+        print(sender.currentTitle!)
+        
         if userChoice == choice1Button.currentTitle! {
             nextStory = example[1]
             storyLabel.text = nextStory.title
             choice1Button.setTitle(nextStory.choice1, for: .normal)
             choice2Button.setTitle(nextStory.choice2, for: .normal)
+            
         } else {
             nextStory = example[2]
             storyLabel.text = nextStory.title
             choice1Button.setTitle(nextStory.choice1, for: .normal)
             choice2Button.setTitle(nextStory.choice2, for: .normal)
+            
         }
     }
     

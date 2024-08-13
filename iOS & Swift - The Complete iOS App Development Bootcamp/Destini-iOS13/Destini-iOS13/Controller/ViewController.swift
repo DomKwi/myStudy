@@ -23,10 +23,16 @@ class ViewController: UIViewController {
     var storyNumber = 0
     
     @IBAction func choiceMade(_ sender: UIButton) {
+        let currentStory = example[storyNumber]
         let userChoice = sender.currentTitle!
         print(sender.currentTitle!)
-        UpdateUI()
         
+        if userChoice == currentStory.choice1 {
+            storyNumber = 1
+        } else if userChoice == currentStory.choice2 {
+            storyNumber = 2
+        }
+        UpdateUI()
     }
     
     let example = [

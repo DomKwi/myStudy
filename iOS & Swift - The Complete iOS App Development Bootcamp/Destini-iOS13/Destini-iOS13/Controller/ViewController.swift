@@ -48,23 +48,10 @@ class ViewController: UIViewController {
     ]
     
     func UpdateUI() {
-        var nextStory = example[0]
-        
-        if storyNumber == 1 {
-                nextStory = example[1]
-                storyLabel.text = nextStory.title
-                choice1Button.setTitle(nextStory.choice1, for: .normal)
-                choice2Button.setTitle(nextStory.choice2, for: .normal)
-                print(storyNumber)
-            } else {
-                storyNumber = 2
-                nextStory = example[2]
-                storyLabel.text = nextStory.title
-                choice1Button.setTitle(nextStory.choice1, for: .normal)
-                choice2Button.setTitle(nextStory.choice2, for: .normal)
-                print(storyNumber)
-            }
-        }
+        storyLabel.text = example[storyNumber].title
+        choice1Button.setTitle(example[storyNumber].choice1, for: .normal)
+        choice2Button.setTitle(example[storyNumber].choice2, for: .normal)
     }
+}
 
 

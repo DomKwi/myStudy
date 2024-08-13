@@ -24,26 +24,9 @@ class ViewController: UIViewController {
     
     @IBAction func choiceMade(_ sender: UIButton) {
         let userChoice = sender.currentTitle!
-        var nextStory = example[0]
-        
-        
         print(sender.currentTitle!)
+        UpdateUI()
         
-        if userChoice == choice1Button.currentTitle! {
-            nextStory = example[1]
-            storyLabel.text = nextStory.title
-            choice1Button.setTitle(nextStory.choice1, for: .normal)
-            choice2Button.setTitle(nextStory.choice2, for: .normal)
-            storyNumber = storyNumber + 1
-            print(storyNumber)
-        } else {
-            nextStory = example[2]
-            storyLabel.text = nextStory.title
-            choice1Button.setTitle(nextStory.choice1, for: .normal)
-            choice2Button.setTitle(nextStory.choice2, for: .normal)
-            storyNumber = storyNumber + 2
-            print(storyNumber)
-        }
     }
     
     let example = [
@@ -57,5 +40,25 @@ class ViewController: UIViewController {
               choice1: "Open it.",
               choice2: "check for traps")
     ]
-}
+    
+    func UpdateUI() {
+        var nextStory = example[0]
+        
+        if storyNumber == 1 {
+                nextStory = example[1]
+                storyLabel.text = nextStory.title
+                choice1Button.setTitle(nextStory.choice1, for: .normal)
+                choice2Button.setTitle(nextStory.choice2, for: .normal)
+                print(storyNumber)
+            } else {
+                storyNumber = 2
+                nextStory = example[2]
+                storyLabel.text = nextStory.title
+                choice1Button.setTitle(nextStory.choice1, for: .normal)
+                choice2Button.setTitle(nextStory.choice2, for: .normal)
+                print(storyNumber)
+            }
+        }
+    }
+
 

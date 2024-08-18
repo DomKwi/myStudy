@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     @IBAction func choiceMade(_ sender: UIButton) {
         let userChoice = sender.currentTitle!
         print(sender.currentTitle!)
-        
+        storyBrain.nextStory(userChoice: userChoice)
         UpdateUI()
     }
     

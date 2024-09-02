@@ -18,8 +18,7 @@ class ViewController: UIViewController {
     @IBAction func heightSlider(_ sender: UISlider) {
         print(sender.value)
         let heightValue = sender.value
-        heightLabel.text = "\(Float(1000 * heightValue)/1000)m"
-        print(heightValue)
+        heightLabel.text = String(format: "%.2f", heightValue) + "m"
     }
     
     @IBAction func weightSlider(_ sender: UISlider) {

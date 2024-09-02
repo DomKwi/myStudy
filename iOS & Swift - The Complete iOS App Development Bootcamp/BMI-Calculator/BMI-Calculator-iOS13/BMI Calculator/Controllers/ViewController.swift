@@ -9,13 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var heightLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     @IBAction func heightSlider(_ sender: UISlider) {
         print(sender.value)
+        let heightValue = sender.value
+        heightLabel.text = "\(Float(heightValue))m"
     }
     
     @IBAction func weightSlider(_ sender: UISlider) {

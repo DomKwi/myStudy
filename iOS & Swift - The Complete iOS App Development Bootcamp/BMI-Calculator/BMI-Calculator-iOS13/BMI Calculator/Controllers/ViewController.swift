@@ -37,7 +37,11 @@ class ViewController: UIViewController {
         
         //initialization of the second view
         let secondVC = SecondViewController()
+        //transferring bmi values to secondVC
+        secondVC.bmiValue = String(format: "%.1f", bmi)
 
+        //transition to second view 
+        self.present(secondVC, animated: true, completion: nil)
     }
     
 }

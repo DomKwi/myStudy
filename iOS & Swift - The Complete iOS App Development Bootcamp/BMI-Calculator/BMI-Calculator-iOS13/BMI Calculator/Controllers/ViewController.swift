@@ -34,6 +34,9 @@ class ViewController: UIViewController {
         let bmi = weightValue / (heightValue * heightValue)
         let result = String(format: "%.1f", bmi)
         print(result)
+        
+        //initialization of the second view
+        let secondVC = SecondViewController()
 
     }
     

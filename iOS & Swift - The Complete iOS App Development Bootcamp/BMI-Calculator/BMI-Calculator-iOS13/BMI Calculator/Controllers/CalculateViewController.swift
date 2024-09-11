@@ -32,16 +32,9 @@ class ViewController: UIViewController {
         let heightValue = heightSlider.value
         let weightValue = weightSlider.value
         let bmi = weightValue / (heightValue * heightValue)
-        let result = String(format: "%.1f", bmi)
-        print(result)
-        
-        //initialization of the second view
-        let secondVC = SecondViewController()
-        //transferring bmi values to secondVC
-        secondVC.bmiValue = String(format: "%.1f", bmi)
-
-        //transition to second view 
-        self.present(secondVC, animated: true, completion: nil)
+       
+        //adding a view using the segue identifier goToResult
+        self.performSegue(withIdentifier: "goToResult", sender: self)
     }
     
 }

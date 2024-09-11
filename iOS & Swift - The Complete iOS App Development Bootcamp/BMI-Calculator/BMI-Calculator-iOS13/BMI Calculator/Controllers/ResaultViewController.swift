@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
+class ResaultViewController: UIViewController {
     
     //create a variable for calculations passed from calculateViewController
     var bmiValue: String?

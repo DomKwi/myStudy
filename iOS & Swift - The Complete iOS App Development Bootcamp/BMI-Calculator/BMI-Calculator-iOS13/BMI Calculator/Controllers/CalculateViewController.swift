@@ -47,10 +47,11 @@ class calculateViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult" {
-            let destinationVC = segue.destination as! ResultViewController
+            let destinationVC = segue.destination as! ResaultViewController
             destinationVC.bmiValue = String(format: "%.1f", bmiValue)
+        }
             
             //The creation of a distinction on the path from the button is sent data to the function is made to distinguish where they are to go. Then pass the data to the result view and assign the value to bmiValue
         }
     }
-}
+

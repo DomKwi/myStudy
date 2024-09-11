@@ -37,4 +37,11 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "goToResult", sender: self)
     }
     
+    //preparation for the segue, if the segue is the same as our path to the resultviewcontroller then pass the data bmi 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.bmiValue = "0.0"
+        }
+    }
 }

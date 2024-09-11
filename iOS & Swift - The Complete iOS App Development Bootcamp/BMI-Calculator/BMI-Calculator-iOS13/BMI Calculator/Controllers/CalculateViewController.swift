@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class calculateViewController: UIViewController {
     
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
@@ -28,15 +28,16 @@ class ViewController: UIViewController {
     
     @IBAction func weightSliderChanged(_ sender: UISlider) {
         let weightValue = sender.value
-        weightLabel.text = String(format: "%.0f", weightValue) + "Kg"
+        weightLabel.text = String(format: "%.0f", weightValue) + "kg"
     }
+    
     
     @IBAction func calculatedPressed(_ sender: Any) {
         let heightValue = heightSlider.value
         let weightValue = weightSlider.value
         let bmi = weightValue / (heightValue * heightValue)
         bmiValue = bmi
-       
+        
         print(bmi)
         //adding a view using the segue identifier goToResult
         self.performSegue(withIdentifier: "goToResult", sender: self)

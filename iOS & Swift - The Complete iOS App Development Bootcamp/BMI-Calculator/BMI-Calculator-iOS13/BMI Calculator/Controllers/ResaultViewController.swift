@@ -23,7 +23,7 @@ class ResaultViewController: UIViewController {
     
     @IBAction func recalculatePressed(_ sender: UIButton) {
         
-        
+        //use of the built-in dissmis function to return to the previous screen
         self.dismiss(animated: true, completion: nil)
     }
 }

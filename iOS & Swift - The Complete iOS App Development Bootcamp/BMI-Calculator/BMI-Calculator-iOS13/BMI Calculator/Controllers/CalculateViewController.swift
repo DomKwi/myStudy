@@ -10,11 +10,12 @@ import UIKit
 
 class calculateViewController: UIViewController {
     
+    var calculatorBrain = CalculatorBrain()
+    
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
-    var bmiValue: Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +34,11 @@ class calculateViewController: UIViewController {
     
     
     @IBAction func calculatedPressed(_ sender: Any) {
-        let heightValue = heightSlider.value
-        let weightValue = weightSlider.value
-        let bmi = weightValue / (heightValue * heightValue)
-        bmiValue = bmi
+        let height = heightSlider.value
+        let weight = weightSlider.value
         
-        print(bmi)
+        calculatorBrain.calculateBMI(height: height, weight: weight)
+        
         //adding a view using the segue identifier goToResult
         self.performSegue(withIdentifier: "goToResult", sender: self)
     }
@@ -48,7 +48,9 @@ class calculateViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResaultViewController
-            destinationVC.bmiValue = String(format: "%.1f", bmiValue)
+            destinationVC.bmiValue = calculatorBrain.getBMIValue() {
+                
+            }
         }
             
             //The creation of a distinction on the path from the button is sent data to the function is made to distinguish where they are to go. Then pass the data to the result view and assign the value to bmiValue

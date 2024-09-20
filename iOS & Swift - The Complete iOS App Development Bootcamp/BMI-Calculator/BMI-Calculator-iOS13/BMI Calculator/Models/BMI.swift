@@ -12,5 +12,5 @@ import SwiftUI
 struct BMI {
     let value: Float
     let advice: String
-    let color: Color
+    let color: UIColor
 }

@@ -50,9 +50,11 @@ class calculateViewController: UIViewController {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResaultViewController
             destinationVC.bmiValue = calculatorBrain.getBMIValue()
-        }
-            
-            //The creation of a distinction on the path from the button is sent data to the function is made to distinguish where they are to go. Then pass the data to the result view and assign the value to bmiValue
+            destinationVC.advice = calculatorBrain.getAdvice()
+            destinationVC.color = calculatorBrain.getColor()
         }
     }
+    
+}
+
 

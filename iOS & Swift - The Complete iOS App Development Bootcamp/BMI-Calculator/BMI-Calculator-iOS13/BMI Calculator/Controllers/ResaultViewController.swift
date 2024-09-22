@@ -12,6 +12,8 @@ class ResaultViewController: UIViewController {
     
     //create a variable for calculations passed from calculateViewController
     var bmiValue: String?
+    var advice: String?
+    var color: UIColor?
     
     @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var bmiLabel: UILabel!

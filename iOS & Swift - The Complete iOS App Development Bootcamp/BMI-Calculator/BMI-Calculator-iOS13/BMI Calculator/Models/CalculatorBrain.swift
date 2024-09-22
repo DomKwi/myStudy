@@ -32,7 +32,7 @@ struct CalculatorBrain {
     }
     
     func getAdvice() -> String {
-        return bmi?.advice ?? ""
+        return bmi?.advice ?? "Error"
     }
     
     func getColor() -> UIColor {

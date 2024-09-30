@@ -30,9 +30,7 @@ class CalculatorViewController: UIViewController {
         let typeValueByName = String(buttonTitle.dropLast())
         let TipProcentage = Double(typeValueByName)!
         tip = TipProcentage / 100
-        
-        print(tip)
-        
+
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
@@ -41,7 +39,7 @@ class CalculatorViewController: UIViewController {
     
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        
+        print(tip)
     }
     
     override func viewDidLoad() {

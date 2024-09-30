@@ -21,7 +21,11 @@ class CalculatorViewController: UIViewController {
         tenPctButton.isSelected = false
         twentyPctButton.isSelected = false
         
-
+        print(sender.isSelected)
+        
+        sender.isSelected = true
+        
+        print(sender.titleLabel?.text)
         print(sender.isSelected)
     }
     

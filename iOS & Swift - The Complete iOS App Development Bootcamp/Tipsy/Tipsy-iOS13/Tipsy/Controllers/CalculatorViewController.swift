@@ -19,6 +19,7 @@ class CalculatorViewController: UIViewController {
     var tip = 1.0
     var numberOfPeople = 2
     var billTextValue: Double = 0.0
+    var finalResult = "0.0"
     
     @IBAction func tipChanged(_ sender: UIButton) {
         
@@ -49,14 +50,17 @@ class CalculatorViewController: UIViewController {
         print(tip)
         
         billTextValue = Double(billTextField.text!) ?? 0.0
-        print(billTextValue)
+        
+        let result = billTextValue * (1 + tip) / Double(numberOfPeople)
+        print(result)
+        
+        finalResult = String(format: "%.2f", result)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResult" {
+
+        }
     }
-
-
 }
 

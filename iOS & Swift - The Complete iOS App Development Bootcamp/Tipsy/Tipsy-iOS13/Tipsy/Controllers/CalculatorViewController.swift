@@ -18,6 +18,7 @@ class CalculatorViewController: UIViewController {
     
     var tip = 1.0
     var numberOfPeople = 2
+    var billTextValue: Double = 0.0
     
     @IBAction func tipChanged(_ sender: UIButton) {
         
@@ -31,18 +32,24 @@ class CalculatorViewController: UIViewController {
         let typeValueByName = String(buttonTitle.dropLast())
         let TipProcentage = Double(typeValueByName)!
         tip = TipProcentage / 100
+        
+        billTextField.endEditing(true)
 
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        
         numberOfPeople = Int(sender.value)
-        print(sender.value)
-        splitNumberLabel.text = String(Int(numberOfPeople))
+        splitNumberLabel.text = String(numberOfPeople)
+        
     }
     
     
     @IBAction func calculatePressed(_ sender: UIButton) {
         print(tip)
+        
+        billTextValue = Double(billTextField.text!) ?? 0.0
+        print(billTextValue)
     }
     
     override func viewDidLoad() {

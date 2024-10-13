@@ -25,3 +25,10 @@ struct Paramedic: AdvanceLifeSupport {
         print("The paramedic doses chest compressions, 30 per second.")
     }
 }
+
+
+let emilio = EmergencyCallHandler()
+let pete = Paramedic(handler: emilio)
+
+emilio.assessSituation()
+emilio.medicalEmergency()

@@ -43,7 +43,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        cityLabel.text = textField.text0
+        cityLabel.text = textField.text
         searchTextField.text = ""
     }
     

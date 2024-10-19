@@ -27,3 +27,8 @@ let array = [6, 2, 3, 9, 4, 1]
  
 //after using closure
 array.map{$0 + 1}
+
+//interpolate to string
+let newArray = array.map{"\($0)"}
+
+print(newArray)

@@ -15,3 +15,15 @@ func multiply(no1: Int, no2: Int) -> Int {
 let result = calculator(n1: 2, n2: 3) {$0 * $1}
 
 print(result)
+
+
+let array = [6, 2, 3, 9, 4, 1]
+
+//beffore
+ func addOne (n1: Int) -> Int {
+ return n1 + 1
+ }
+ array.map(addOne)
+ 
+//after using closure
+array.map{$0 + 1}
